@@ -1,4 +1,4 @@
-// import greeting from '../src/index.js';
-import calc from '../src/games/bclog.js';
+#!/usr/bin/env node
+import calc from '../src/games/calc.js';
 
 calc();
