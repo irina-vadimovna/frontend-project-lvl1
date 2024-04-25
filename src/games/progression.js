@@ -1,6 +1,6 @@
 import { runGame, getRandomInt } from '../index.js';
 
-const arr = () => {
+const getArrProgression = () => {
   const step = getRandomInt(1, 10);
   const firstNum = getRandomInt(1, 20);
   const array = [firstNum];
@@ -17,7 +17,7 @@ const progression = () => {
   const gameRules = 'What number is missing in the progression?';
 
   const getQA = () => {
-    const newArray = arr();
+    const newArray = getArrProgression();
     const randomIndex = getRandomInt(0, 9);
 
     const element = newArray[randomIndex];

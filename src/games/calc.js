@@ -6,6 +6,24 @@ const operator = () => {
   return arr[i];
 };
 
+const calculation = (randomNum1, randomNum2, sign) => {
+  let res = 0;
+  switch (sign) {
+    case '+':
+      res = randomNum1 + randomNum2;
+      break;
+    case '-':
+      res = randomNum1 - randomNum2;
+      break;
+    case '*':
+      res = randomNum1 * randomNum2;
+      break;
+    default:
+      console.log('');
+  }
+  return res;
+};
+
 const calc = () => {
   const gameRules = 'What is the result of the expression?';
 
@@ -14,23 +32,8 @@ const calc = () => {
     const randomNum2 = getRandomInt(1, 20);
     const sign = operator();
 
-    let res = 0;
-    switch (sign) {
-      case '+':
-        res = randomNum1 + randomNum2;
-        break;
-      case '-':
-        res = randomNum1 - randomNum2;
-        break;
-      case '*':
-        res = randomNum1 * randomNum2;
-        break;
-      default:
-        console.log('');
-    }
-
     const question = `${randomNum1} ${sign} ${randomNum2}`;
-    const correctAnswer = res.toString();
+    const correctAnswer = calculation(randomNum1, randomNum2, sign).toString();
     return { question: `${question}`, answer: correctAnswer };
   };
   runGame(gameRules, getQA);
